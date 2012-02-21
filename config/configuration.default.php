@@ -16,8 +16,8 @@ $config->system_tools = array(
 	'php'        => '/usr/bin/php'
 	'adduser'    => '/usr/sbin/adduser',
 	'service'    => '/sbin/service',
-   'git'        => '/usr/bin/git',
-   'svn'        => '/usr/bin/svn'
+	'git'        => '/usr/bin/git',
+	'svn'        => '/usr/bin/svn'
 );
 
 /**
