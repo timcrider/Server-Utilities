@@ -9,6 +9,11 @@
 * @author Timothy M. Crider <timcrider@gmail.com>
 */
 
+if (empty($_SERVER['USER']) || $_SERVER['USER'] != 'root') {
+	print "This utility was intended to run as root. '{$_SERVER['USER']}' is not recognized.\n";
+	exit(1);
+}
+
 define('BASEDIR', dirname(__FILE__).'/');
 
 $tryConfigFile = BASEDIR.'config/configuration.php';
