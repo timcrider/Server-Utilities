@@ -3,6 +3,14 @@ Server Utilities
 
 These are some helpful scripts that I use to manage my servers.
 
+
+Community
+=========
+Many thanks to the open source community. Server utilities use several open source projects.
+
+* [Zend Framework](http://framework.zend.com) Version 1.11.11
+
+
 MIT Open Source License
 =======================
 
