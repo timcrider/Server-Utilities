@@ -17,7 +17,11 @@ $config->system_tools = array(
 	'adduser'    => '/usr/sbin/adduser',
 	'service'    => '/sbin/service',
 	'git'        => '/usr/bin/git',
-	'svn'        => '/usr/bin/svn'
+	'svn'        => '/usr/bin/svn',
+	'du'         => '/usr/bin/du',
+	'groups'     => '/usr/bin/groups',
+	'awk'        => '/bin/awk',
+	'grep'       => '/bin/grep'
 );
 
 /**

@@ -3,7 +3,6 @@
 require_once dirname(dirname(__FILE__)).'/environment.php';
 $line = str_repeat('-', 80);
 
-
 print "{$line}\nServer Utilities are working\n{$line}\n\n";
 
 /**
@@ -41,11 +40,11 @@ if ($config->system_tools) {
 		printf("%-20s ", $key);
 		
 		if (!file_exists($tool)) {
-			print "[NOEXIST]\n";
+			print "[".Colors::getColoredString('NOEXIST', 'red')."]\n";
 		} elseif(!is_executable($tool)) {
-			print "[NOEXEC]\n";
+			print "[".Colors::getColoredString('NOEXEC', 'red')."]\n";
 		} else {
-			print "[OK]\n";
+			print "[".Colors::getColoredString('OK', 'green')."]\n";
 		}
 	}
 

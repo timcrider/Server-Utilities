@@ -20,7 +20,7 @@ if (!file_exists($tryConfigFile) || !is_readable($tryConfigFile)) {
 
 // Isolate our environment to only this area
 $pathing = array(
-	BASEDIR.'src/library/',
+	BASEDIR.'src/',
 	BASEDIR.'vendor/',
 	BASEDIR.'vendor/ZendFramework/library/',
 	BASEDIR.'src/'
