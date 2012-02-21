@@ -10,6 +10,7 @@ Many thanks to the open source community. Server utilities use several open sour
 
 * [Zend Framework](http://framework.zend.com) Version 1.11.11
 * [Amazon Web Services](http://aws.amazon.com/) Version 1.5.2
+* [Shell Color Object](http://www.if-not-true-then-false.com/2010/php-class-for-coloring-php-command-line-cli-scripts-output-php-output-colorizing-using-bash-shell-colors/)
 
 MIT Open Source License
 =======================

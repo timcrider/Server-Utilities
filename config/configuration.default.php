@@ -15,7 +15,9 @@ $config->system_tools = array(
 	'mysqldump'  => '/usr/bin/mysqldump',
 	'php'        => '/usr/bin/php'
 	'adduser'    => '/usr/sbin/adduser',
-	'service'    => '/sbin/service'
+	'service'    => '/sbin/service',
+   'git'        => '/usr/bin/git',
+   'svn'        => '/usr/bin/svn'
 );
 
 /**
@@ -35,4 +37,17 @@ $config->database = array(
 	'options'    => array(
 		'quote_identifiers' => true
 	)
+);
+
+/**
+* Amazon Web Services
+*/
+$config->aws = array(
+	'development' => array(
+		'key'                   => '',
+		'secret'                => '',
+		'default_cache_config'  => '',
+		'certificate_authority' => false
+	),
+	'@default'    => 'development'
 );
