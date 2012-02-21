@@ -9,7 +9,7 @@ Community
 Many thanks to the open source community. Server utilities use several open source projects.
 
 * [Zend Framework](http://framework.zend.com) Version 1.11.11
-
+* [Amazon Web Services](http://aws.amazon.com/) Version 1.5.2
 
 MIT Open Source License
 =======================
