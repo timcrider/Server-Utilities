@@ -55,3 +55,10 @@ $config->aws = array(
 	),
 	'@default'    => 'development'
 );
+
+/**
+* Apache 
+*/
+$config->apache = array(
+
+);

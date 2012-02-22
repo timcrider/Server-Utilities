@@ -38,10 +38,13 @@ try {
 	require_once 'Zend/Loader/Autoloader.php';
 	$autoloader = Zend_Loader_Autoloader::getInstance();
 	$autoloader->setFallbackAutoloader(true);
+	
+	$registry = Zend_Registry::getInstance();
 
 	// Load configuration
 	require_once $tryConfigFile;
-
+	
+	$registry->config = $config;
 } catch (Zend_Exception $e) {
 	print "There was an error loading the environment: ".$e->getMessage()."\n";
 	exit(1);
