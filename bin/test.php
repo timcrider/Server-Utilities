@@ -51,3 +51,8 @@ if ($config->system_tools) {
 } else {
 	print "{$line}\nNo system tools configured\n";
 }
+
+/**
+* Console Testing
+*/
+Console::status();

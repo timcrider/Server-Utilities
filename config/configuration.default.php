@@ -60,5 +60,7 @@ $config->aws = array(
 * Apache 
 */
 $config->apache = array(
-
+	'ip'                => '*',
+	'virtualhostConfig' => BASEDIR.'templates/apache.virtualhost.conf',
+	'virtualhostDir'    => '/etc/httpd/sites.d/'
 );

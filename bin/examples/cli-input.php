@@ -6,7 +6,7 @@ require_once dirname(dirname(dirname(__FILE__))).'/environment.php';
 
 Console::marquee("Cli Input Test");
 
-$output = Console::input('What is your '.Colors::getColoredString('name', 'yellow'), true);
+$output = Console::input(Colors::getColoredString('What is your name:', 'yellow'), true);
 
 if (empty($output)) {
 	print "Sorry, no input detected. exiting.\n";

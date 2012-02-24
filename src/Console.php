@@ -6,6 +6,33 @@ class Console {
 	static protected $ps1      = " ";
 	static protected $maxTries = 5;
 	static protected $width    = 80;
+	static protected $history  = array();
+	
+	/**
+	*
+	*/
+	public function status() {
+		self::marquee("Console Status");
+
+		self::write(sprintf("%-20s: %s\n", "PS1", self::$ps1));
+		self::write(sprintf("%-20s: %s\n", "Maximum Tries", self::$maxTries));
+		self::write(sprintf("%-20s: %s\n", "Width", self::$width));
+
+		if (function_exists('readline')) {
+			$consoleType = "Readline";
+		} else {
+			$consoleType = "STDIN";
+		}
+
+		self::write(sprintf("%-20s: %s\n", "Console Type", $consoleType));
+	}
+	
+	/**
+	*
+	*/
+	public function formatStatus($message, $status, $color) {
+		return sprintf("%-70s %18s\n", $message, "[".Colors::getColoredString($status, $color)."]");
+	}
 
 	/**
 	*
@@ -74,14 +101,19 @@ class Console {
 	*/
 	public function input($prompt=NULL, $required=NULL) {
 		if (!empty($prompt)) {
-			self::write($prompt . self::$ps1);
+			$prompt = $prompt.self::$ps1;
 		}
 
 		if (!empty($required)) {
 			$tries = 0;
 
 			while (empty($output)) {
-				$output = trim(@fgets(STDIN));
+				if (function_exists('readline')) {
+					$output = trim(@readline($prompt));
+				} else {
+					self::write($prompt);
+					$output = trim(@fgets(STDIN));
+				}
 
 				if (!empty($output)) {
 					return $output;
@@ -90,12 +122,21 @@ class Console {
 				if ($tries >= self::$maxTries) {
 					return false;
 				}
-
-				self::write($prompt . self::$ps1);
 				$tries++;
 			}
 		} else {
-			$output = trim(@fgets(STDIN));
+			if (function_exists('readline')) {
+				$output = trim(@readline($prompt));
+			} else {
+				self::write($prompt);
+				$output = trim(@fgets(STDIN));
+			}
+		}
+
+		if (function_exists('readline')) {
+			readline_add_history($output);
+		} else {
+			self::$history[] = $output;
 		}
 
 		return $output;

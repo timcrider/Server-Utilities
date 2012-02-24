@@ -14,7 +14,9 @@ if (empty($_SERVER['USER']) || $_SERVER['USER'] != 'root') {
 	exit(1);
 }
 
+// Define and change into our base directory
 define('BASEDIR', dirname(__FILE__).'/');
+chdir(BASEDIR);
 
 $tryConfigFile = BASEDIR.'config/configuration.php';
 
